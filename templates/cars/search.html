@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %} | Search Results {% endblock %}
+
 {% block content %}
-  <!-- Banner start -->
+<!-- Banner start -->
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
         <div class="breadcrumb-areas">
@@ -22,13 +24,13 @@
             <div class="search-contents">
                 <form method="GET" action="{% url 'search'%}">
                     <div class="row">
-                        
+
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="model">
                                     <option disabled="disabled" selected="selected">Select Make</option>
                                     {% for model in model_search %}
-                                     <option value="{{model}}">{{model}}</option>
+                                    <option value="{{model}}">{{model}}</option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -39,7 +41,7 @@
                                     <option disabled="disabled" selected="selected">Select Location</option>
                                     {% for city in city_search %}
                                     <option value="{{city}}">{{city}}</option>
-                                   {% endfor %}
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -49,7 +51,7 @@
                                     <option disabled="disabled" selected="selected">Select Year</option>
                                     {% for year in year_search %}
                                     <option value="{{year}}">{{year}}</option>
-                                   {% endfor %}
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -61,7 +63,7 @@
                                     <option disabled="disabled" selected="selected">Select Type Of Car</option>
                                     {% for model in body_style_search %}
                                     <option value="{{model}}">{{model}}</option>
-                                   {% endfor %}
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -71,14 +73,16 @@
                                     <option disabled="disabled" selected="selected">Transmission</option>
                                     {% for transmission in transmisson_search %}
                                     <option value="{{transmission}}">{{transmission}}</option>
-                                   {% endfor %}
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
                                 <div class="range-slider">
-                                    <div data-min="0" data-max="150000" data-unit="USD" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                    <div data-min="0" data-max="150000" data-unit="USD" data-min-name="min_price"
+                                        data-max-name="max_price" class="range-slider-ui ui-slider"
+                                        aria-disabled="false"></div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -114,7 +118,8 @@
                     <div class="car-thumbnail">
                         <a href="{% url 'car_detail' car.id %}" class="car-img">
                             <div class="tag">For Sale</div>
-                            <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="min-height: 262px; , max-height: 262px;">
+                            <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car"
+                                style="min-height: 262px; , max-height: 262px;">
                             <div class="facilities-list clearfix">
                                 <ul>
                                     <li>
@@ -186,7 +191,7 @@
 
 
             {% endfor %}
-            
+
         </div>
     </div>
 </div>

@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+
+{% block title %} | Home {% endblock %}
+
 {% block content %}
 {%load static%}
 <!-- Banner start -->
@@ -40,7 +43,7 @@
                 <div class="form-group">
                     <input type="text" name="keyword" placeholder="Search by name" class="form-control">
                 </div>
-                
+
                 <div class="form-group">
                     <select class="form-control search-fields" name="model">
                         <option selected="true" disabled="disabled">Model</option>
@@ -74,10 +77,11 @@
                     </select>
                 </div>
                 <div class="range-slider clearfix">
-                                <label>Price</label>
-                                <div data-min="0" data-max="150000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
-                                <div class="clearfix"></div>
-                            </div>
+                    <label>Price</label>
+                    <div data-min="0" data-max="150000" data-min-name="min_price" data-max-name="max_price"
+                        data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                    <div class="clearfix"></div>
+                </div>
                 <div class="form-group">
                     <button class="btn btn-block button-theme btn-md">
                         <i class="fa fa-search"></i> Search
@@ -112,19 +116,21 @@
         </div>
         <!-- Slick slider area start -->
         <div class="slick-slider-area clearfix">
-            <div class="row slick-carousel" data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
-                
-        {% for car in featured_cars %}
+            <div class="row slick-carousel"
+                data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+
+                {% for car in featured_cars %}
                 <div class="slick-slide-item">
                     <div class="car-box-3">
                         <div class="car-thumbnail">
                             <a href="{% url 'car_detail' car.id %}" class="car-img">
                                 <div class="tag-2">Featured</div>
                                 <div class="price-box">
-                            
+
                                     <span>$ {{car.price}}</span>
                                 </div>
-                                <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="min-height: 262px;">
+                                <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car"
+                                    style="min-height: 262px;">
                             </a>
                             <div class="carbox-overlap-wrapper">
                                 <div class="overlap-box">
@@ -180,7 +186,7 @@
                     </div>
                 </div>
 
-        {% endfor %}
+                {% endfor %}
             </div>
             <div class="slick-btn">
                 <div class="slick-prev slick-arrow-buton sab-4">
@@ -210,7 +216,8 @@
                     <div class="car-thumbnail">
                         <a href="{% url 'car_detail' car.id %}" class="car-img">
                             <div class="tag">For Sale</div>
-                            <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="min-height: 262px; , max-height: 262px;">
+                            <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car"
+                                style="min-height: 262px; , max-height: 262px;">
                             <div class="facilities-list clearfix">
                                 <ul>
                                     <li>
@@ -298,7 +305,8 @@
         </div>
         <!-- Slick slider area start -->
         <div class="slick-slider-area clearfix">
-            <div class="row slick-carousel" data-slick='{"slidesToShow": 4, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+            <div class="row slick-carousel"
+                data-slick='{"slidesToShow": 4, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
                 {% for team in teams %}
                 <div class="slick-slide-item">
                     <div class="team-1">
@@ -307,9 +315,12 @@
                                 <img src="{{team.photo.url}}" alt="team-1" class="img-fluid">
                             </a>
                             <div class="social-list clearfix">
-                                <a href="{{team.facebook_link}}" target = "_blank" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                                <a href="{{team.twitter_link}}" target = "_blank" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                                <a href="{{team.google_plus_link}}" target = "_blank" class="google-bg"><i class="fa fa-google"></i></a>
+                                <a href="{{team.facebook_link}}" target="_blank" class="facebook-bg"><i
+                                        class="fa fa-facebook"></i></a>
+                                <a href="{{team.twitter_link}}" target="_blank" class="twitter-bg"><i
+                                        class="fa fa-twitter"></i></a>
+                                <a href="{{team.google_plus_link}}" target="_blank" class="google-bg"><i
+                                        class="fa fa-google"></i></a>
                             </div>
                         </div>
                         <div class="details">
@@ -319,8 +330,8 @@
                     </div>
                 </div>
                 {% endfor %}
-                
-                
+
+
             </div>
         </div>
     </div>
@@ -350,7 +361,8 @@
 
 <!-- Car Overview Modal -->
 <div class="car-model-2">
-    <div class="modal fade" id="carOverviewModal" tabindex="-1" role="dialog" aria-labelledby="carOverviewModalLabel" aria-hidden="true">
+    <div class="modal fade" id="carOverviewModal" tabindex="-1" role="dialog" aria-labelledby="carOverviewModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -373,7 +385,8 @@
                                         <span class="del-2">$1050.00</span>
                                     </div>
                                     <div class="">
-                                        <a href="car-details.html" class="btn btn-md btn-round btn-theme">Convertible</a>
+                                        <a href="car-details.html"
+                                            class="btn btn-md btn-round btn-theme">Convertible</a>
                                     </div>
                                 </div>
                             </div>
@@ -410,7 +423,8 @@
                                 </section>
                                 <div class="description">
                                     <h3>Description</h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard.</p>
                                     <a href="car-details.html" class="btn btn-md btn-round btn-theme">Show Detail</a>
                                 </div>
                             </div>

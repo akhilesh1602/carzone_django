@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+from django.contrib.messages import constants as messages
 from pathlib import Path, os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,6 +34,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "cars",
     "pages",
+    "accounts",
+    "contacts",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -81,8 +84,8 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": 'carzone_db',
         "USER": 'postgres',
-        'PASSWORD' : 'meri@maa',
-        'HOST' : 'localhost',
+        'PASSWORD': 'meri@maa',
+        'HOST': 'localhost',
     }
 }
 
@@ -94,9 +97,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", },
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
 
 
@@ -118,7 +121,7 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'carzone/static'),
-]
+                    ]
 
 
 # Default primary key field type
@@ -132,4 +135,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
 
 
+# messages
 
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+}
+
+# sending mail
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'arpit.verma1201@gmail.com'
+EMAIL_HOST_PASSWORD = 'Meri@maa123'
+EMAIL_USE_TLS = True
