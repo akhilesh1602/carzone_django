@@ -6,6 +6,12 @@
 * HTML
 * CSS
 * Bootstrap
+## Features :
+* Login/Logout
+* Register
+* Search
+* Message
+
 
 
 
