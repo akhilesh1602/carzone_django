@@ -11,6 +11,10 @@
 * Register
 * Search
 * Message
+* Section for Featured Cars
+* Section for Latest Cars
+* detailed description of Cars
+## Snapshots :
 
 
 
